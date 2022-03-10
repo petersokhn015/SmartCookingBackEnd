@@ -1,0 +1,17 @@
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\obj\Debug\net5.0\Recipes.Repo.csproj.AssemblyReference.cache
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\obj\Debug\net5.0\Recipes.Repo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\obj\Debug\net5.0\Recipes.Repo.AssemblyInfoInputs.cache
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\obj\Debug\net5.0\Recipes.Repo.AssemblyInfo.cs
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\obj\Debug\net5.0\Recipes.Repo.csproj.CoreCompileInputs.cache
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\bin\Debug\net5.0\Recipes.Repo.deps.json
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\bin\Debug\net5.0\Recipes.Repo.dll
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\bin\Debug\net5.0\Recipes.Repo.pdb
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\bin\Debug\net5.0\Recipes.Data.dll
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\bin\Debug\net5.0\Recipes.Services.dll
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\bin\Debug\net5.0\Recipes.Data.pdb
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\bin\Debug\net5.0\Recipes.Services.pdb
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\obj\Debug\net5.0\Recipes.Repo.csproj.CopyComplete
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\obj\Debug\net5.0\Recipes.Repo.dll
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\obj\Debug\net5.0\refint\Recipes.Repo.dll
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\obj\Debug\net5.0\Recipes.Repo.pdb
+C:\Users\tawil\source\repos\FoodApp\Recipes.Repo\obj\Debug\net5.0\ref\Recipes.Repo.dll
