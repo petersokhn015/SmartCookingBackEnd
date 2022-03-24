@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tawil\\source\\repos\\FoodApp\\FoodApp\\FoodApp.csproj": {}
+    "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\FoodApp\\FoodApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tawil\\source\\repos\\FoodApp\\FoodApp\\FoodApp.csproj": {
+    "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\FoodApp\\FoodApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tawil\\source\\repos\\FoodApp\\FoodApp\\FoodApp.csproj",
+        "projectUniqueName": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\FoodApp\\FoodApp.csproj",
         "projectName": "FoodApp",
-        "projectPath": "C:\\Users\\tawil\\source\\repos\\FoodApp\\FoodApp\\FoodApp.csproj",
+        "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\FoodApp\\FoodApp.csproj",
         "packagesPath": "C:\\Users\\tawil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tawil\\source\\repos\\FoodApp\\FoodApp\\obj\\",
+        "outputPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\FoodApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,14 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\tawil\\source\\repos\\FoodApp\\Recipes.Data\\Recipes.Data.csproj": {
-                "projectPath": "C:\\Users\\tawil\\source\\repos\\FoodApp\\Recipes.Data\\Recipes.Data.csproj"
+              "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj": {
+                "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj"
               },
-              "C:\\Users\\tawil\\source\\repos\\FoodApp\\Recipes.Services\\Recipes.Services.csproj": {
-                "projectPath": "C:\\Users\\tawil\\source\\repos\\FoodApp\\Recipes.Services\\Recipes.Services.csproj"
+              "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj": {
+                "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj"
+              },
+              "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj": {
+                "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj"
               }
             }
           }
@@ -51,6 +54,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.22, )"
@@ -86,14 +93,14 @@
         }
       }
     },
-    "C:\\Users\\tawil\\source\\repos\\FoodApp\\Recipes.Data\\Recipes.Data.csproj": {
+    "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tawil\\source\\repos\\FoodApp\\Recipes.Data\\Recipes.Data.csproj",
+        "projectUniqueName": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj",
         "projectName": "Recipes.Data",
-        "projectPath": "C:\\Users\\tawil\\source\\repos\\FoodApp\\Recipes.Data\\Recipes.Data.csproj",
+        "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj",
         "packagesPath": "C:\\Users\\tawil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tawil\\source\\repos\\FoodApp\\Recipes.Data\\obj\\",
+        "outputPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -154,14 +161,14 @@
         }
       }
     },
-    "C:\\Users\\tawil\\source\\repos\\FoodApp\\Recipes.Services\\Recipes.Services.csproj": {
+    "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tawil\\source\\repos\\FoodApp\\Recipes.Services\\Recipes.Services.csproj",
-        "projectName": "Recipes.Services",
-        "projectPath": "C:\\Users\\tawil\\source\\repos\\FoodApp\\Recipes.Services\\Recipes.Services.csproj",
+        "projectUniqueName": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj",
+        "projectName": "Recipes.Repo",
+        "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj",
         "packagesPath": "C:\\Users\\tawil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tawil\\source\\repos\\FoodApp\\Recipes.Services\\obj\\",
+        "outputPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -182,8 +189,83 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\tawil\\source\\repos\\FoodApp\\Recipes.Data\\Recipes.Data.csproj": {
-                "projectPath": "C:\\Users\\tawil\\source\\repos\\FoodApp\\Recipes.Data\\Recipes.Data.csproj"
+              "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj": {
+                "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj"
+              },
+              "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj": {
+                "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.22, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj",
+        "projectName": "Recipes.Services",
+        "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj",
+        "packagesPath": "C:\\Users\\tawil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\tawil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj": {
+                "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj"
               }
             }
           }

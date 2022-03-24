@@ -34,16 +34,5 @@ namespace Recipes.Data
         public List<string> MealType { get; set; }
 
         public List<string> DishType { get; set; }
-
-        public List<Recipe> ResultToRecipe(Result result)
-        {
-            List<Recipe> recipes = new();
-
-            result.Hits.ForEach(hit => recipes.Add(new Recipe(hit.Recipe.Label, hit.Recipe.Images.Thumbnail, hit.Recipe.Ingredients, hit.Recipe.DietLabels, hit.Recipe.HealthLabels, hit.Recipe.Calories,
-                                       hit.Recipe.CuisineType, hit.Recipe.MealType, hit.Recipe.DietLabels)));
-
-            return recipes;
-
-        }
     }
 }

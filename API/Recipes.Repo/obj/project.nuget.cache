@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RVvuOMZ89tePKlszg5DYjUOyPKQEDpmCvnHr0djsX3+oTcqv4nQvKJt69fkLM+3m7RzcHdi9z8JyScC0Vl6Bjg==",
+  "dgSpecHash": "gLgMwfnjtwG7U7Jbkc49aRvf2JqSWQ3qXEXoiLlQ/kVEghMy5bhm97SOjHeT4P6lbfgP2GXh0QYn97QFiAW1uA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tawil\\source\\repos\\FoodApp\\Recipes.Repo\\Recipes.Repo.csproj",
+  "projectFilePath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tawil\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\tawil\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",

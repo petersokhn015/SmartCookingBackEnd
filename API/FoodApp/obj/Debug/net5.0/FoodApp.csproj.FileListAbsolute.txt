@@ -35,3 +35,7 @@ C:\Users\tawil\source\repos\FoodApp\FoodApp\obj\Debug\net5.0\ref\FoodApp.dll
 C:\Users\tawil\source\repos\FoodApp\FoodApp\bin\Debug\net5.0\Recipes.Services.dll
 C:\Users\tawil\source\repos\FoodApp\FoodApp\bin\Debug\net5.0\Recipes.Services.pdb
 C:\Users\tawil\source\repos\FoodApp\FoodApp\obj\Debug\net5.0\FoodApp.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\tawil\source\repos\FoodApp\FoodApp\bin\Debug\net5.0\Recipes.Repo.dll
+C:\Users\tawil\source\repos\FoodApp\FoodApp\bin\Debug\net5.0\Recipes.Repo.pdb
+C:\Users\tawil\source\repos\FoodApp\FoodApp\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+C:\Users\tawil\source\repos\FoodApp\FoodApp\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

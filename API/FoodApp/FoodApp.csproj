@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.22" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
@@ -12,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Recipes.Data\Recipes.Data.csproj" />
+    <ProjectReference Include="..\Recipes.Repo\Recipes.Repo.csproj" />
     <ProjectReference Include="..\Recipes.Services\Recipes.Services.csproj" />
   </ItemGroup>
 

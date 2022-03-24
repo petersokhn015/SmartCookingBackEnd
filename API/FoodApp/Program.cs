@@ -7,8 +7,6 @@ namespace FoodApp
     {
         public static void Main(string[] args)
         {
-            RecipesController r = new RecipesController();
-            r.GetRecipeByIngredients("");
             CreateHostBuilder(args).Build().Run();
         }
 
