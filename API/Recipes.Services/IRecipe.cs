@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Recipes.Services
 {
-    public interface IPo
+    public interface IRecipe
     {
-        Task<Po> GetResult(string[] ingredients);
+        Task<Recipe> GetResult(string[] ingredients);
     }
 }

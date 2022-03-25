@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace Recipes.Repo
 {
-    public class PoRepo : IPo
+    public class RecipeRepo : IRecipe
     {
-        public async Task<Po> GetResult(string[] ingredients)
+        public async Task<Recipe> GetResult(string[] ingredients)
         {
             HttpClient client = new HttpClient();
 
-            Po Po = new Po();
+            Recipe recipe = new Recipe();
 
             string ingredientString = String.Join(" ", ingredients);
 
@@ -24,8 +24,8 @@ namespace Recipes.Repo
             if (response.IsSuccessStatusCode)
             {
                 var data = await response.Content.ReadAsStringAsync();
-                Po = Serialize.FromJson(data);
-                return Po;
+                recipe = Serialize.FromJson(data);
+                return recipe;
             }
 
             return null;

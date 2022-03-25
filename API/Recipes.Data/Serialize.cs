@@ -5,14 +5,14 @@ namespace Recipes.Data
 {
     public static class Serialize
     {
-        public static Po FromJson(string json) => JsonConvert.DeserializeObject<Po>(json, Recipes.Data.Converter.Settings); 
-        public static string ToJson(this Po self) => JsonConvert.SerializeObject(self, Recipes.Data.Converter.Settings);
+        public static Recipe FromJson(string json) => JsonConvert.DeserializeObject<Recipe>(json, Recipes.Data.Converter.Settings); 
+        public static string ToJson(this Recipe self) => JsonConvert.SerializeObject(self, Recipes.Data.Converter.Settings);
 
-        public static List<Recipe> PoToRecipe(Po Po)
+        public static List<RecipeDTO> RecipeToRecipeDTO(Recipe recipe)
         {
-            List<Recipe> recipes = new();
+            List<RecipeDTO> recipes = new();
 
-            Po.Hits.ForEach(hit => recipes.Add(new Recipe(hit.Recipe.Label, hit.Recipe.Images.Thumbnail, hit.Recipe.Ingredients, hit.Recipe.DietLabels, hit.Recipe.HealthLabels, hit.Recipe.Calories,
+            recipe.Hits.ForEach(hit => recipes.Add(new RecipeDTO(hit.Recipe.Label, hit.Recipe.Images.Thumbnail, hit.Recipe.Ingredients, hit.Recipe.DietLabels, hit.Recipe.HealthLabels, hit.Recipe.Calories,
                                        hit.Recipe.CuisineType, hit.Recipe.MealType, hit.Recipe.DietLabels)));
 
             return recipes;
