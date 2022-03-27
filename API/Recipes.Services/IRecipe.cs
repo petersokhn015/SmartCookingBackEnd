@@ -9,6 +9,6 @@ namespace Recipes.Services
 {
     public interface IRecipe
     {
-        Task<Recipe> GetResult(string[] ingredients);
+        Task<List<RecipeDTO>> GetResult(string[] ingredients);
     }
 }
