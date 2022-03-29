@@ -80,3 +80,9 @@ C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEn
 C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\obj\Debug\net5.0\FoodApp.csproj.CopyComplete
 C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\obj\Debug\net5.0\FoodApp.genruntimeconfig.cache
 C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\obj\Debug\net5.0\ref\FoodApp.dll
+C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll

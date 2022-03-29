@@ -1,4 +1,5 @@
-﻿using Recipes.Data;
+﻿using AutoMapper;
+using Recipes.Data;
 using Recipes.Services;
 using System;
 using System.Collections.Generic;
@@ -9,27 +10,38 @@ namespace Recipes.Repo
 {
     public class RecipeRepo : IRecipe
     {
-        public async Task<List<RecipeDTO>> GetResult(string[] ingredients)
+        private readonly IMapper _mapper;
+        public RecipeRepo(IMapper mapper)
         {
+            _mapper = mapper;
+        }
+
+        public async Task<List<RecipeDTOResponse>> GetRecipeByIngredients(string[] ingredients)
+        {
+            List<RecipeDTOResponse> results = new();
+            HttpClient client = new();
             try
             {
-                HttpClient client = new HttpClient();
+                string ingredientsString = String.Join(",+", ingredients);
+                var response = await client.GetAsync("https://api.spoonacular.com/recipes/findByIngredients?apiKey=03f7fd19fd3e438cb751fa3523af01e0&ingredients=" + ingredients);
 
-                Recipe recipe = new Recipe();
+                if (response.IsSuccessStatusCode)
+                {
+                    var recipes = await response.Content.ReadAsAsync<List<RecipeDTORequest>>();
 
-                string ingredientString = String.Join(" ", ingredients);
+                    foreach (var recipe in recipes)
+                    {
+                        results.Add(_mapper.Map<RecipeDTOResponse>(recipe));
+                    }
+                }
 
-                HttpResponseMessage response = await client.GetAsync("https://api.edamam.com/api/recipes/v2?q=" + ingredientString + "&app_key=cb9146dd569b6c3f77ee56a410930f11&type=public&app_id=3c9ba749&field=label&field=images&field=ingredients&field=calories&field=cuisineType&field=mealType&field=dishType&field=dietLabels&field=healthLabels&random=true");
-
-                var data = await response.Content.ReadAsStringAsync();
-                recipe = Serialize.FromJson(data);
-                return Serialize.RecipeToRecipeDTO(recipe);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                Console.WriteLine(ex.Message);
-                return null;
-            }      
+                Console.WriteLine(e.ToString());
+
+            }
+            return results;
         }
     }
 }
