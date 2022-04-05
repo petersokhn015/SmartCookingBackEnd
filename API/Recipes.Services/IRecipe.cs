@@ -1,4 +1,8 @@
-public class Joteif
+using Recipes.Data;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+public interface IRecipe
 {
-    //[HttpGet]
+    Task<List<RecipeDTOResponse>> GetRecipeByIngredients(string[] ingredients);
 }

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Recipes.Data;
-using Recipes.Services;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;

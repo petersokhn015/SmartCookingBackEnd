@@ -6,7 +6,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Recipes.Data;
 using Recipes.Repo;
-using Recipes.Services;
 
 namespace FoodApp
 {
