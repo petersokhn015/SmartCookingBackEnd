@@ -1,6 +1,7 @@
 ﻿using FireSharp.Config;
 using FireSharp.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Recipes.Data;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,17 +12,20 @@ namespace FoodApp.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
+        private readonly IConfiguration _configuration;
         private readonly IFirebaseConfig _config;
         private readonly IFirebaseClient _client;
-        public UsersController()
+        public UsersController(IConfiguration configuration)
         {
+            _configuration = configuration;
             _config = new FirebaseConfig()
             {
-                AuthSecret = "Htbi7b0uEajxhzxt67a0q1g4ylDOefuEd1eqMC9a",
-                BasePath = "https://cookingpanda-80340-default-rtdb.europe-west1.firebasedatabase.app/"
+                AuthSecret = _configuration["FirebaseCredentials:Secret"],
+                BasePath = _configuration["FirebaseCredentials:BaseUrl"]
             };
             _client = new FireSharp.FirebaseClient(_config);
         }
+
         [HttpPost("User")]
         public async Task<ActionResult> Create(User user)
         {
