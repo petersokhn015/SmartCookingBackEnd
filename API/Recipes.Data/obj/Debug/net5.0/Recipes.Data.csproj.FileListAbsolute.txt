@@ -22,3 +22,15 @@ C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEn
 C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\Recipes.Data\bin\Debug\net5.0\Recipes.Data.dll
 C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\Recipes.Data\bin\Debug\net5.0\Recipes.Data.pdb
 C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\Recipes.Data\obj\Debug\net5.0\ref\Recipes.Data.dll
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Data\bin\Debug\net5.0\Recipes.Data.deps.json
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Data\bin\Debug\net5.0\Recipes.Data.dll
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Data\bin\Debug\net5.0\ref\Recipes.Data.dll
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Data\bin\Debug\net5.0\Recipes.Data.pdb
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Data\obj\Debug\net5.0\Recipes.Data.csproj.AssemblyReference.cache
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Data\obj\Debug\net5.0\Recipes.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Data\obj\Debug\net5.0\Recipes.Data.AssemblyInfoInputs.cache
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Data\obj\Debug\net5.0\Recipes.Data.AssemblyInfo.cs
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Data\obj\Debug\net5.0\Recipes.Data.csproj.CoreCompileInputs.cache
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Data\obj\Debug\net5.0\Recipes.Data.dll
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Data\obj\Debug\net5.0\ref\Recipes.Data.dll
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Data\obj\Debug\net5.0\Recipes.Data.pdb

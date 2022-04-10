@@ -28,3 +28,18 @@ C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEn
 C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\Recipes.Services\bin\Debug\net5.0\Recipes.Data.pdb
 C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\Recipes.Services\obj\Debug\net5.0\Recipes.Services.csproj.CopyComplete
 C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\Recipes.Services\obj\Debug\net5.0\ref\Recipes.Services.dll
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Services\bin\Debug\net5.0\Recipes.Services.deps.json
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Services\bin\Debug\net5.0\Recipes.Services.dll
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Services\bin\Debug\net5.0\ref\Recipes.Services.dll
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Services\bin\Debug\net5.0\Recipes.Services.pdb
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Services\bin\Debug\net5.0\Recipes.Data.dll
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Services\bin\Debug\net5.0\Recipes.Data.pdb
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Services\obj\Debug\net5.0\Recipes.Services.csproj.AssemblyReference.cache
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Services\obj\Debug\net5.0\Recipes.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Services\obj\Debug\net5.0\Recipes.Services.AssemblyInfoInputs.cache
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Services\obj\Debug\net5.0\Recipes.Services.AssemblyInfo.cs
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Services\obj\Debug\net5.0\Recipes.Services.csproj.CoreCompileInputs.cache
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Services\obj\Debug\net5.0\Recipes.Services.csproj.CopyComplete
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Services\obj\Debug\net5.0\Recipes.Services.dll
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Services\obj\Debug\net5.0\ref\Recipes.Services.dll
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\Recipes.Services\obj\Debug\net5.0\Recipes.Services.pdb

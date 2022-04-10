@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "9cc5b571-13f5-4062-9c84-16ba24424236": {
+      "ProjectGuid": "9cc5b571-13f5-4062-9c84-16ba24424236",
+      "DisplayName": "Recipes.Data",
+      "ColorIndex": 0
+    },
+    "c39ee436-b4be-4883-b08f-490be82c58a4": {
+      "ProjectGuid": "c39ee436-b4be-4883-b08f-490be82c58a4",
+      "DisplayName": "FoodApp",
+      "ColorIndex": 1
+    },
+    "10d461b8-3969-4fbb-98e2-7301b0081fe1": {
+      "ProjectGuid": "10d461b8-3969-4fbb-98e2-7301b0081fe1",
+      "DisplayName": "Recipes.Repo",
+      "ColorIndex": 2
+    },
+    "0710021b-5ced-4112-b25e-7931db1a6219": {
+      "ProjectGuid": "0710021b-5ced-4112-b25e-7931db1a6219",
+      "DisplayName": "Recipes.Services",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 4
+}
