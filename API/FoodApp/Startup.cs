@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Recipes.Data;
 using Recipes.Repo;
+using Recipes.Services;
 
 namespace FoodApp
 {
@@ -24,6 +25,8 @@ namespace FoodApp
             services.AddAutoMapper(typeof(RecipeProfile));
             services.AddControllersWithViews();
             services.AddTransient<IRecipe, RecipeRepo>();
+            services.AddTransient<IPreferences, PreferencesRepo>();
+            services.AddTransient<IUsers, UsersRepo>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

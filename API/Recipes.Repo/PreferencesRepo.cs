@@ -1,0 +1,120 @@
+﻿using FireSharp.Config;
+using FireSharp.Interfaces;
+using Microsoft.Extensions.Configuration;
+using Recipes.Data;
+using Recipes.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Recipes.Repo
+{
+    public class PreferencesRepo  : IPreferences
+    {
+        private readonly IFirebaseConfig _config;
+        private readonly IFirebaseClient _client;
+        private readonly IConfiguration _configuration;
+        public PreferencesRepo(IConfiguration configuration)
+        {
+            _configuration = configuration;
+            _config = new FirebaseConfig()
+            {
+                AuthSecret = _configuration["FirebaseCredentials:Secret"],
+                BasePath = _configuration["FirebaseCredentials:BaseUrl"]
+            };
+            _client = new FireSharp.FirebaseClient(_config);
+        }
+
+        public async Task<bool> AddUserPreferences(UserPreferences preferences)
+        {
+            try
+            {
+                var prefcount = await GetCountPreferences();
+                int Id = prefcount + 1;
+                preferences.Id = Id;
+                var setter = _client.Set("Preferences/UserPreference" + Id, preferences);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+                
+        }
+
+        public async Task<UserPreferences> GetUserPreferences(int id)
+        {
+            try
+            {
+                var result = _client.Get("Preferences/UserPreference" + id);
+                UserPreferences userPref = result.ResultAs<UserPreferences>();
+                return userPref;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public async Task<Dictionary<string, UserPreferences>> GetAllPreferences()
+        {
+            try
+            {
+                var result = await _client.GetAsync("Preferences");
+                Dictionary<string, UserPreferences> data = result.ResultAs<Dictionary<string, UserPreferences>>();
+                return data;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        private async Task<int> GetCountPreferences()
+        {
+            int count = 0;
+            try
+            {
+
+                var result = await _client.GetAsync("Preferences");
+                Dictionary<string, UserPreferences> data = result.ResultAs<Dictionary<string, UserPreferences>>();
+                if (data != null)
+                {
+                    count = data.Count;
+                }
+                return count;
+            }
+            catch
+            {
+                return count;
+            }
+        }
+
+        public async Task<bool> UpdatePreference(UserPreferences preference)
+        {
+            try
+            {
+                var setter = _client.Update("Preferences/UserPreference" + preference.Id, preference);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        public async Task<bool> DeletePreference(int id)
+        {
+            try
+            {
+                var setter = _client.Delete("Preferences/UserPreference" + id);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+    }
+}

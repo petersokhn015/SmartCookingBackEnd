@@ -3,6 +3,7 @@ using FireSharp.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Recipes.Data;
+using Recipes.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,32 +13,27 @@ namespace FoodApp.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
-        private readonly IFirebaseConfig _config;
-        private readonly IFirebaseClient _client;
-        public UsersController(IConfiguration configuration)
+        private readonly IUsers _users;
+        public UsersController(IUsers users)
         {
-            _configuration = configuration;
-            _config = new FirebaseConfig()
-            {
-                AuthSecret = _configuration["FirebaseCredentials:Secret"],
-                BasePath = _configuration["FirebaseCredentials:BaseUrl"]
-            };
-            _client = new FireSharp.FirebaseClient(_config);
+            _users = users;
         }
 
         [HttpPost("User")]
-        public async Task<ActionResult> Create(User user)
+        public async Task<ActionResult> Create(DTOUser userToAdd)
         {
-            try
+            User user = new()
             {
-                var usercount = await GetCountUsers();
-                int Id = usercount.Value + 1;
-                user.Id = Id;
-                var setter = _client.Set("Users/User" + Id, user);
+                username = userToAdd.username,
+                password = userToAdd.password,
+            };
+
+            bool isCreated = await _users.AddUser(user);
+            if(isCreated == true)
+            {
                 return Ok("User added");
             }
-            catch
+            else
             {
                 return BadRequest("User not added");
             }
@@ -46,110 +42,83 @@ namespace FoodApp.Controllers
         [HttpGet("GetIdOfUser/{username}")]
         public async Task<ActionResult<int>> GetIdOfUser(string username)
         {
-            try
+            var userId = await _users.GetIdOfUser(username);
+            if(userId != -1)
             {
-                var result = await _client.GetAsync("Users");
-                int Id = 0;
-                Dictionary<string, User> data = result.ResultAs<Dictionary<string, User>>();
-                foreach (var user in data)
-                {
-                    if (user.Value.username.Equals(username))
-                    {
-                        Id = user.Value.Id;
-                    }
-                }
-
-                return Id;
+                return Ok(userId);
             }
-            catch
+            else
             {
-                return BadRequest("User not found");
+                return NotFound("User not found");
             }
         }
 
-        [HttpGet("GetPreferenceOfUser/{Id}")]
-        public async Task<ActionResult<List<Preferences>>> GetPreferenceOfUser(int Id)
+        [HttpGet("GetPreferenceOfUser/{username}")]
+        public async Task<ActionResult> GetPreference(string username)
         {
-            try
+            var userPreferences = await _users.GetPreferenceOfUser(username);
+            if(userPreferences != null)
             {
-                var result = await _client.GetAsync("Preferences");
-                List<Preferences> preferences = new();
-                Dictionary<string, UserPreferences> data = result.ResultAs<Dictionary<string, UserPreferences>>();
-                foreach (var user in data)
-                {
-                    if (user.Value.userId.Equals(Id))
-                    {
-                       preferences = user.Value.preferences;
-                    }
-                }
-
-                return preferences;
+                return Ok(userPreferences);
             }
-            catch
+            else
             {
-                return BadRequest("User not found");
+                return NotFound("Preferences not found for this user");
             }
         }
 
         [HttpGet("User/{id}")]
         public async Task<ActionResult> Get(int id)
         {
-            try
+            var user = await _users.GetUser(id);
+            if(user != null)
             {
-                var result = _client.Get("Users/User" + id);
-                User user = result.ResultAs<User>();
                 return Ok(user);
             }
-            catch
+            else
             {
-                return BadRequest("User not found");
+                return NotFound("User not found");
             }
+        }
+
+        [HttpGet("UserLoggedIn")]
+        public async Task<bool> isUserLoggedIn([FromQuery] DTOUser user)
+        {
+            bool isUserFound = await _users.isUserExist(user);
+            return isUserFound;
+        }
+
+        [HttpGet("UserExists")]
+        public async Task<bool> isUserExist([FromQuery] string username)
+        {
+            bool isUserFound = await _users.isUserExist(username);
+            return isUserFound;
         }
 
         [HttpGet("Users")]
         public async Task<ActionResult> GetAllUsers()
         {
-            try
+            var users = await _users.GetAllUsers();
+            if(users != null)
             {
-                var result = await _client.GetAsync("Users");
-                Dictionary<string, User> data = result.ResultAs<Dictionary<string, User>>();
-                return Ok(data);
+                return Ok(users);
             }
-            catch
+            else
             {
-                return BadRequest("Users not found");
-            }
-        }
-
-        private async Task<ActionResult<int>> GetCountUsers()
-        {
-            int count = 0;
-            try
-            {
-                
-                var result = await _client.GetAsync("Users");
-                Dictionary<string, User> data = result.ResultAs<Dictionary<string, User>>();
-                if(data != null)
-                {
-                    count = data.Count;
-                }
-                return count;
-            }
-            catch
-            {
-                return count;
+                List<User> list = new();
+                return Ok(list);
             }
         }
 
         [HttpPut("User")]
         public async Task<ActionResult> Update(User user)
         {
-            try
-            {
-                var setter = _client.Update("Users/User" + user.Id, user);
+            bool isUpdated = await _users.UpdateUser(user);
+            if(isUpdated == true)
+            { 
                 return Ok("User updated");
             }
-            catch
+            else
             {
                 return BadRequest("User not updated");
             }
@@ -158,12 +127,12 @@ namespace FoodApp.Controllers
         [HttpDelete("User")]
         public async Task<ActionResult> Delete(int id)
         {
-            try
+            bool isDeleted = await _users.DeleteUser(id);
+            if(isDeleted == true)
             {
-                var setter = _client.Delete("Users/User" + id);
                 return Ok("User deleted");
             }
-            catch
+            else
             {
                 return BadRequest("User not deleted");
             }

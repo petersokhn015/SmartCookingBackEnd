@@ -1,10 +1,7 @@
-﻿using FireSharp.Config;
-using FireSharp.Interfaces;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.AspNetCore.Mvc;
 using Recipes.Data;
-using System.Collections.Generic;
+using Recipes.Repo;
+using Recipes.Services;
 using System.Threading.Tasks;
 
 namespace FoodApp.Controllers
@@ -13,112 +10,79 @@ namespace FoodApp.Controllers
     [ApiController]
     public class PreferencesController : ControllerBase
     {
-        private readonly IFirebaseConfig _config;
-        private readonly IFirebaseClient _client;
-        private readonly IConfiguration _configuration;
-        public PreferencesController(IConfiguration configuration)
+        private readonly IPreferences _preferences;
+        public PreferencesController(IPreferences preferences)
         {
-            _configuration = configuration;
-            _config = new FirebaseConfig()
-            {
-                AuthSecret = _configuration["FirebaseCredentials:Secret"],
-                BasePath = _configuration["FirebaseCredentials:BaseUrl"]
-            };
-            _client = new FireSharp.FirebaseClient(_config);
+            _preferences = preferences;
         }
 
         [HttpPost("Preference")]
-        public async Task<ActionResult> Create(UserPreferences preferences)
+        public async Task<ActionResult> AddPreference(UserPreferences preferences)
         {
-            try
+            bool isCreated = await _preferences.AddUserPreferences(preferences);
+            if (isCreated == true)
             {
-                var prefcount = await GetCountPreferences();
-                int Id = prefcount.Value + 1;
-                preferences.Id = Id;
-                var setter = _client.Set("Preferences/UserPreference" + Id, preferences);
                 return Ok("Preference added");
             }
-            catch
+            else
             {
                 return BadRequest("Preference not added");
             }
         }
 
         [HttpGet("Preference/{id}")]
-        public async Task<ActionResult> Get(int id)
+        public async Task<ActionResult> GetPreference(int id)
         {
-            try
+            var userPreferences = await _preferences.GetUserPreferences(id);
+
+            if(userPreferences != null)
             {
-                var result = _client.Get("Preferences/UserPreference" + id);
-                UserPreferences userPref = result.ResultAs<UserPreferences>();
-                return Ok(userPref);
+                return Ok(userPreferences);
             }
-            catch
+            else
             {
                 return BadRequest("Preference not found");
             }
         }
 
         [HttpGet("Preferences")]
-        public async Task<ActionResult> GetAllUsers()
+        public async Task<ActionResult> GetPreferences()
         {
-            try
+            var preferences = await _preferences.GetAllPreferences();
+            if(preferences != null)
             {
-                var result = await _client.GetAsync("Preferences");
-                Dictionary<string, UserPreferences> data = result.ResultAs<Dictionary<string, UserPreferences>>();
-                return Ok(data);
+                 return Ok(preferences);
             }
-            catch
+            else
             {
                 return BadRequest("Preferences not found");
             }
         }
 
-        private async Task<ActionResult<int>> GetCountPreferences()
-        {
-            int count = 0;
-            try
-            {
-
-                var result = await _client.GetAsync("Preferences");
-                Dictionary<string, UserPreferences> data = result.ResultAs<Dictionary<string, UserPreferences>>();
-                if (data != null)
-                {
-                    count = data.Count;
-                }
-                return count;
-            }
-            catch
-            {
-                return count;
-            }
-        }
-
-
-
         [HttpPut("Preference")]
-        public async Task<ActionResult> Update(UserPreferences preference)
+        public async Task<ActionResult> UpdatePreference(UserPreferences preference)
         {
-            try
+            bool isUpdated = await _preferences.UpdatePreference(preference);
+            if(isUpdated == true)
             {
-                var setter = _client.Update("Preferences/UserPreference" + preference.Id, preference);
                 return Ok("Preference updated");
             }
-            catch
+            else
             {
                 return BadRequest("Preference not updated");
             }
         }
 
         [HttpDelete("Preference")]
-        public async Task<ActionResult> Delete(int id)
+        public async Task<ActionResult> DeletePreference(int id)
         {
-            try
+            bool isDeleted = await _preferences.DeletePreference(id);
+            if(isDeleted == true)
             {
-                var setter = _client.Delete("Preferences/UserPreference" + id);
+                
                 return Ok("Preference deleted");
             }
-            catch
+            else
             {
                 return BadRequest("Preference not deleted");
             }
