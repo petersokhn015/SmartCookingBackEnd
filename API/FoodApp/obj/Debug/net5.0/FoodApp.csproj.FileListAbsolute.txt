@@ -139,3 +139,9 @@ C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\FoodApp\obj\Debug\net5.
 C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\FoodApp\obj\Debug\net5.0\ref\FoodApp.dll
 C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\FoodApp\obj\Debug\net5.0\FoodApp.pdb
 C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\FoodApp\obj\Debug\net5.0\FoodApp.genruntimeconfig.cache
+C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\FireSharp.dll
+C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\Microsoft.Threading.Tasks.dll
+C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\System.Net.Http.Extensions.dll
+C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\System.Net.Http.Primitives.dll

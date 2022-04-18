@@ -6,6 +6,7 @@ namespace Recipes.Data
 {
     public class Ingredient
     {
+        public string Image { get; set; }
         public long Id { get; set; }
 
         public double Amount { get; set; }
