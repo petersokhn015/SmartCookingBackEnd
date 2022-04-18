@@ -43,7 +43,7 @@ namespace Recipes.Repo
             throw new NotImplementedException();
         }
 
-        public async Task<List<Result>> GetRecipesByFilter(Filter filter)
+        public async Task<List<Recipe>> GetRecipesByFilter(Filter filter)
         {
             FilterRecipe results = new();
             string cuisineType, intolerance;
@@ -67,9 +67,19 @@ namespace Recipes.Repo
             return results.Results;
         }
 
-        public Task<List<Recipe>> GetRecommendedRecipes(int recipeId)
+        public async Task<List<RecommendedRecipe>> GetRecommendedRecipes(int recipeId)
         {
-            throw new NotImplementedException();
+            List<RecommendedRecipe> results = new();
+            try
+            {
+                var response = await client.GetAsync(new Uri($"https://api.spoonacular.com/recipes/715538/similar?apiKey=03f7fd19fd3e438cb751fa3523af01e0"));
+                if (response.IsSuccessStatusCode) results = await response.Content.ReadAsAsync<List<RecommendedRecipe>>();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            return results;
         }
 
         public async Task<List<Recipe>> GetRandomRecipes()

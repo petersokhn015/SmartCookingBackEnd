@@ -25,9 +25,9 @@ namespace FoodApp
         }
 
         [HttpGet("RecipeByFilter")]
-        public async Task<List<Result>> GetRecipeByFilter([FromQuery] Filter filter)
+        public async Task<List<Recipe>> GetRecipeByFilter([FromQuery] Filter filter)
         {
-            List<Result> recipes = await recipeInterface.GetRecipesByFilter(filter);
+            List<Recipe> recipes = await recipeInterface.GetRecipesByFilter(filter);
             return recipes;
         }
 
@@ -35,6 +35,13 @@ namespace FoodApp
         public async Task<List<Recipe>> GetRandomRecipe()
         {
             List<Recipe> recipes = await recipeInterface.GetRandomRecipes();
+            return recipes;
+        }
+
+        [HttpGet("RecommendedRecipe")]
+        public async Task<List<RecommendedRecipe>> GetRecommendedRecipe([FromQuery] int id)
+        {
+            List<RecommendedRecipe> recipes = await recipeInterface.GetRecommendedRecipes(id);
             return recipes;
         }
     }

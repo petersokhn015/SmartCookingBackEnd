@@ -6,6 +6,6 @@ namespace Recipes.Data
     public partial class FilterRecipe
     {
         [JsonProperty("results")]
-        public List<Result> Results { get; set; }
+        public List<Recipe> Results { get; set; }
     }
 }

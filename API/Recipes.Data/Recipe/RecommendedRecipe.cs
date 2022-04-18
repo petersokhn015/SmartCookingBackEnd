@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Recipes.Data
 {
-    public partial class Result
+    public class RecommendedRecipe
     {
         [JsonProperty("id")]
         public long Id { get; set; }
@@ -15,7 +15,7 @@ namespace Recipes.Data
         [JsonProperty("title")]
         public string Title { get; set; }
 
-        [JsonProperty("image")]
-        public Uri Image { get; set; }
+        [JsonProperty("sourceUrl")]
+        public string Image { get; set; }
     }
 }
