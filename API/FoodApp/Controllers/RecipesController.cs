@@ -17,12 +17,39 @@ namespace FoodApp
             this.recipeInterface = recipeInterface;
         }
 
-        [HttpGet]
-        public async Task<List<RecipeDTOResponse>> GetRecipeByIngredients([FromQuery] string[] ingredients)
+        [HttpGet("RecipeByIngredient")]
+        public async Task<List<RecipeDTO>> GetRecipeByIngredients([FromQuery] string[] ingredients)
         {
-            List<RecipeDTOResponse> recipes = new();
-            recipes = await recipeInterface.GetRecipeByIngredients(ingredients);
+            List<RecipeDTO> recipes = await recipeInterface.GetRecipeByIngredients(ingredients);
             return recipes;
+        }
+
+        [HttpGet("RecipeByFilter")]
+        public async Task<List<RecipeDTO>> GetRecipeByFilter([FromQuery] Filter filter)
+        {
+            List<RecipeDTO> recipes = await recipeInterface.GetRecipesByFilter(filter);
+            return recipes;
+        }
+
+        [HttpGet("RandomRecipes")]
+        public async Task<List<RecipeDTO>> GetRandomRecipe()
+        {
+            List<RecipeDTO> recipes = await recipeInterface.GetRandomRecipes();
+            return recipes;
+        }
+
+        [HttpGet("RecommendedRecipe")]
+        public async Task<List<RecipeDTO>> GetRecommendedRecipe([FromQuery] int id)
+        {
+            List<RecipeDTO> recipes = await recipeInterface.GetRecommendedRecipes(id);
+            return recipes;
+        }
+
+        [HttpGet("RecipeDetails")]
+        public async Task<DetailedRecipe> GetRecipeInfo(int recipeId)
+        {
+            DetailedRecipe recipe = await recipeInterface.GetRecipeInfo(recipeId);
+            return recipe;
         }
     }
 }

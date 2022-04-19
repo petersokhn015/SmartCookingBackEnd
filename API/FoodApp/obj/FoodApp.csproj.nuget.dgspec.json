@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\FoodApp\\FoodApp.csproj": {}
+    "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\FoodApp\\FoodApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\FoodApp\\FoodApp.csproj": {
+    "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\FoodApp\\FoodApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\FoodApp\\FoodApp.csproj",
+        "projectUniqueName": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\FoodApp\\FoodApp.csproj",
         "projectName": "FoodApp",
-        "projectPath": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\FoodApp\\FoodApp.csproj",
-        "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\FoodApp\\obj\\",
+        "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\FoodApp\\FoodApp.csproj",
+        "packagesPath": "C:\\Users\\tawil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\FoodApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tawil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,22 +26,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.emzi0767.com/api/v3/index.json": {},
-          "https://www.myget.org/F/discord-net/api/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj": {
-                "projectPath": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj"
+              "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj": {
+                "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj"
               },
-              "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj": {
-                "projectPath": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj"
+              "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj": {
+                "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj"
               },
-              "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj": {
-                "projectPath": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj"
+              "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj": {
+                "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj"
               }
             }
           }
@@ -99,21 +101,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj": {
+    "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj",
+        "projectUniqueName": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj",
         "projectName": "Recipes.Data",
-        "projectPath": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj",
-        "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Data\\obj\\",
+        "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj",
+        "packagesPath": "C:\\Users\\tawil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tawil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -121,9 +127,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.emzi0767.com/api/v3/index.json": {},
-          "https://www.myget.org/F/discord-net/api/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -181,21 +185,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj": {
+    "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj",
+        "projectUniqueName": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj",
         "projectName": "Recipes.Repo",
-        "projectPath": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj",
-        "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\obj\\",
+        "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\Recipes.Repo.csproj",
+        "packagesPath": "C:\\Users\\tawil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Repo\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tawil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -203,19 +211,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.emzi0767.com/api/v3/index.json": {},
-          "https://www.myget.org/F/discord-net/api/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj": {
-                "projectPath": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj"
+              "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj": {
+                "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj"
               },
-              "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj": {
-                "projectPath": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj"
+              "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj": {
+                "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj"
               }
             }
           }
@@ -270,21 +276,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj": {
+    "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj",
+        "projectUniqueName": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj",
         "projectName": "Recipes.Services",
-        "projectPath": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj",
-        "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Services\\obj\\",
+        "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\Recipes.Services.csproj",
+        "packagesPath": "C:\\Users\\tawil\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Services\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tawil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -292,16 +302,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.emzi0767.com/api/v3/index.json": {},
-          "https://www.myget.org/F/discord-net/api/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj": {
-                "projectPath": "C:\\Users\\peter\\Documents\\GitHub\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj"
+              "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj": {
+                "projectPath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\Recipes.Data\\Recipes.Data.csproj"
               }
             }
           }
@@ -356,7 +364,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.104\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

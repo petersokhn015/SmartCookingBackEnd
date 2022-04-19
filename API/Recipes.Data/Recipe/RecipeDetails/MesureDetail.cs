@@ -1,20 +1,19 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Recipes.Data
 {
-    public class Ingredient
+    public class MesureDetail
     {
-        public long Id { get; set; }
-
+        [JsonProperty("amount")]
         public double Amount { get; set; }
 
-        public string Name { get; set; }
-
-        [JsonProperty("original")]
-        public string Preparation { get; set; }
-
+        [JsonProperty("unitShort")]
         public string Unit { get; set; }
+
     }
 }
