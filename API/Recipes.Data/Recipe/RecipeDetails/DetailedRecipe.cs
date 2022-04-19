@@ -15,13 +15,15 @@ namespace Recipes.Data
 
         public int CaloriesCount { get; set; }
 
+        public int Servings { get; set; }
+
         public int IngredientCount { get; set; }
 
-        public String Tags { get; set; }
+        public List<string> Tags { get; set; }
 
         public List<Ingredient> Ingredients { get; set; }
 
-        public List<String>  Steps { get; set; }
+        public List<string>  Steps { get; set; }
 
     }
 }

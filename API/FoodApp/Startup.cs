@@ -23,6 +23,7 @@ namespace FoodApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(RecipeProfile));
+            services.AddAutoMapper(typeof(DetailedRecipeProfile));
             services.AddControllersWithViews();
             services.AddTransient<IRecipe, RecipeRepo>();
             services.AddTransient<IPreferences, PreferencesRepo>();

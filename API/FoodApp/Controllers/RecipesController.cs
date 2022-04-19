@@ -44,5 +44,12 @@ namespace FoodApp
             List<RecipeDTO> recipes = await recipeInterface.GetRecommendedRecipes(id);
             return recipes;
         }
+
+        [HttpGet("RecipeDetails")]
+        public async Task<DetailedRecipe> GetRecipeInfo(int recipeId)
+        {
+            DetailedRecipe recipe = await recipeInterface.GetRecipeInfo(recipeId);
+            return recipe;
+        }
     }
 }

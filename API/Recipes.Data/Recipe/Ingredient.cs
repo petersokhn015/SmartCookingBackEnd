@@ -6,15 +6,22 @@ namespace Recipes.Data
 {
     public class Ingredient
     {
+        public Ingredient(){ }
+
+        public Ingredient(string image, double amount, string name, string unit)
+        {
+            
+            Image = $"http://spoonacular.com/cdn/ingredients_100x100/{image}";
+            Amount = amount;
+            Name = name;
+            Unit = unit;
+        }
+
         public string Image { get; set; }
-        public long Id { get; set; }
 
         public double Amount { get; set; }
 
         public string Name { get; set; }
-
-        [JsonProperty("original")]
-        public string Preparation { get; set; }
 
         public string Unit { get; set; }
     }

@@ -47,9 +47,22 @@ namespace Recipes.Repo
             return results;
         }
 
-        public Task<DetailedRecipe> GetRecipeInfo(int recipeId)
+        public async Task<DetailedRecipe> GetRecipeInfo(int recipeId)
         {
-            throw new NotImplementedException();
+            AnalysedRecipe recipe = new();
+
+            try
+            {
+                var recipeResponse = await _client.GetAsync(new Uri($"{baseURL}{recipeId}/information?apiKey={apiKey}&includeNutrition=true"));
+                if (recipeResponse.IsSuccessStatusCode) recipe = await recipeResponse.Content.ReadAsAsync<AnalysedRecipe>();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
+            return _mapper.Map<DetailedRecipe>(recipe);
+
         }
 
         public async Task<List<RecipeDTO>> GetRecipesByFilter(Filter filter)
