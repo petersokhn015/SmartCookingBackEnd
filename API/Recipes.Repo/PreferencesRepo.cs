@@ -48,7 +48,7 @@ namespace Recipes.Repo
         {
             try
             {
-                var result = _client.Get("Preferences/UserPreference" + id);
+                var result = await _client.GetAsync("Preferences/UserPreference" + id);
                 UserPreferences userPref = result.ResultAs<UserPreferences>();
                 return userPref;
             }
@@ -96,7 +96,7 @@ namespace Recipes.Repo
         {
             try
             {
-                var setter = _client.Update("Preferences/UserPreference" + preference.Id, preference);
+                var setter = await _client.UpdateAsync("Preferences/UserPreference" + preference.Id, preference);
                 return true;
             }
             catch
@@ -108,7 +108,7 @@ namespace Recipes.Repo
         {
             try
             {
-                var setter = _client.Delete("Preferences/UserPreference" + id);
+                var setter = await _client.DeleteAsync("Preferences/UserPreference" + id);
                 return true;
             }
             catch
