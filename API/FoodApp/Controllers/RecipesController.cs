@@ -18,30 +18,30 @@ namespace FoodApp
         }
 
         [HttpGet("RecipeByIngredient")]
-        public async Task<List<RecipeDTO>> GetRecipeByIngredients([FromQuery] string[] ingredients)
+        public async Task<List<Recipe>> GetRecipeByIngredients([FromQuery] string[] ingredients)
         {
-            List<RecipeDTO> recipes = await recipeInterface.GetRecipeByIngredients(ingredients);
+            List<Recipe> recipes = await recipeInterface.GetRecipeByIngredients(ingredients);
             return recipes;
         }
 
         [HttpGet("RecipeByFilter")]
-        public async Task<List<RecipeDTO>> GetRecipeByFilter([FromQuery] Filter filter)
+        public async Task<List<Recipe>> GetRecipeByFilter([FromQuery] Filter filter)
         {
-            List<RecipeDTO> recipes = await recipeInterface.GetRecipesByFilter(filter);
+            List<Recipe> recipes = await recipeInterface.GetRecipesByFilter(filter);
             return recipes;
         }
 
         [HttpGet("RandomRecipes")]
-        public async Task<List<RecipeDTO>> GetRandomRecipe()
+        public async Task<List<Recipe>> GetRandomRecipe()
         {
-            List<RecipeDTO> recipes = await recipeInterface.GetRandomRecipes();
+            List<Recipe> recipes = await recipeInterface.GetRandomRecipes();
             return recipes;
         }
 
         [HttpGet("RecommendedRecipe")]
-        public async Task<List<RecipeDTO>> GetRecommendedRecipe([FromQuery] int id)
+        public async Task<List<RecommendedRecipe>> GetRecommendedRecipe([FromQuery] int id)
         {
-            List<RecipeDTO> recipes = await recipeInterface.GetRecommendedRecipes(id);
+            List<RecommendedRecipe> recipes = await recipeInterface.GetRecommendedRecipes(id);
             return recipes;
         }
     }

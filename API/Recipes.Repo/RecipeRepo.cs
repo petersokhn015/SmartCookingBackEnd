@@ -1,6 +1,4 @@
 ﻿using AutoMapper;
-using FireSharp.Config;
-using Microsoft.Extensions.Configuration;
 using Recipes.Data;
 using System;
 using System.Collections.Generic;
@@ -11,32 +9,25 @@ namespace Recipes.Repo
 {
     public class RecipeRepo : IRecipe
     {
-        HttpClient _client;
-        private readonly IConfiguration _configuration;
-        readonly string baseURL, apiKey;
-        private readonly IMapper _mapper;
+        HttpClient client = new();
+        //private readonly IMapper _mapper;
+        //public RecipeRepo(IMapper mapper)
+        //{
+        //    _mapper = mapper;
+        //}
 
-        public RecipeRepo(IConfiguration configuration, IMapper mapper)
-        { 
-            _configuration = configuration;
-            baseURL = _configuration.GetValue<string>("SpoonacularCredentials:BaseUrl");
-            apiKey = _configuration.GetValue<string>("SpoonacularCredentials:Secret");
-            _client = new HttpClient();
-            _mapper = mapper;
-        }
-
-
-
-        public async Task<List<RecipeDTO>> GetRecipeByIngredients(string[] ingredients)
+        string baseURL = "https://api.spoonacular.com/recipes/";
+        
+        public async Task<List<Recipe>> GetRecipeByIngredients(string[] ingredients)
         {
-            List<RecipeDTO> results = new();
+            List<Recipe> results = new();
             
             try
             {
                 string ingredientsString = String.Join(",+", ingredients);
-                var response = await _client.GetAsync(new Uri($"{baseURL}findByIngredients?apiKey={apiKey}&ingredients={ingredients}"));
+                var response = await client.GetAsync(new Uri(baseURL + "findByIngredients?apiKey=03f7fd19fd3e438cb751fa3523af01e0&ingredients=" + ingredients));
 
-                if (response.IsSuccessStatusCode) results = await response.Content.ReadAsAsync<List<RecipeDTO>>();
+                if (response.IsSuccessStatusCode) results = await response.Content.ReadAsAsync<List<Recipe>>();
 
             }
             catch (Exception e)
@@ -52,21 +43,21 @@ namespace Recipes.Repo
             throw new NotImplementedException();
         }
 
-        public async Task<List<RecipeDTO>> GetRecipesByFilter(Filter filter)
+        public async Task<List<Recipe>> GetRecipesByFilter(Filter filter)
         {
             FilterRecipe results = new();
             string cuisineType, intolerance;
             try 
             {
-                string apiUrl = $"{baseURL}complexSearch?apiKey={apiKey}&query={filter.Query.ToLower()}";
+                string apiUrl = baseURL + "complexSearch?apiKey=03f7fd19fd3e438cb751fa3523af01e0&query=" + filter.Query.ToLower();
 
                 if (filter.CuisineTypes != null) { cuisineType = String.Join(",+", filter.CuisineTypes); apiUrl += $"&cuisine={cuisineType.ToLower()}"; }
                 if (filter.Intolerances != null) { intolerance = String.Join(",+", filter.Intolerances); apiUrl += $"&intolerances={intolerance.ToLower()}"; }
-                if (filter.Diet != null) { apiUrl += $"&diet={filter.Diet}"; }
-                if (filter.MealType != null) { apiUrl += $"&type={filter.MealType}"; }
-                if (filter.MaxCookTime > 0 ) { apiUrl += $"&maxReadyTime={filter.MaxCookTime}"; }
+                if (filter.Diet != null) { apiUrl += $"&diet{filter.Diet}"; }
+                if (filter.MealType != null) { apiUrl += $"&type{filter.MealType}"; }
+                if (filter.MaxCookTime > 0 ) { apiUrl += $"&maxReadyTime{filter.MaxCookTime}"; }
 
-                var response = await _client.GetAsync(new Uri(apiUrl));
+                var response = await client.GetAsync(new Uri(apiUrl));
                 if (response.IsSuccessStatusCode) results = await response.Content.ReadAsAsync<FilterRecipe>();
             }
             catch (Exception e)
@@ -76,34 +67,29 @@ namespace Recipes.Repo
             return results.Results;
         }
 
-        public async Task<List<RecipeDTO>> GetRecommendedRecipes(int recipeId)
+        public async Task<List<RecommendedRecipe>> GetRecommendedRecipes(int recipeId)
         {
-            List<RecipeDTO> returnedResults = new();
+            List<RecommendedRecipe> results = new();
             try
             {
-                var response = await _client.GetAsync(new Uri($"{baseURL}{recipeId}/similar?apiKey={apiKey}"));
-                if (response.IsSuccessStatusCode) 
-                {
-                    List<Recipe> results = await response.Content.ReadAsAsync<List<Recipe>>();
-                    results.ForEach(recipe => returnedResults.Add(_mapper.Map<RecipeDTO>(recipe)));
-
-                };
+                var response = await client.GetAsync(new Uri($"https://api.spoonacular.com/recipes/715538/similar?apiKey=03f7fd19fd3e438cb751fa3523af01e0"));
+                if (response.IsSuccessStatusCode) results = await response.Content.ReadAsAsync<List<RecommendedRecipe>>();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
             }
-            return returnedResults;
+            return results;
         }
 
-        public async Task<List<RecipeDTO>> GetRandomRecipes()
+        public async Task<List<Recipe>> GetRandomRecipes()
         {
            
-            List<RecipeDTO> results = new();
+            List<Recipe> results = new();
             try
             {
-                var response = await _client.GetAsync(new Uri($"{baseURL}random?apiKey={apiKey}&number=3"));
-                if (response.IsSuccessStatusCode) results = await response.Content.ReadAsAsync<List<RecipeDTO>>();
+                var response = await client.GetAsync(new Uri("https://api.spoonacular.com/recipes/random?apiKey=03f7fd19fd3e438cb751fa3523af01e0&number=5"));
+                if (response.IsSuccessStatusCode) results = await response.Content.ReadAsAsync<List<Recipe>>();
             }
             catch (Exception e)
             {
