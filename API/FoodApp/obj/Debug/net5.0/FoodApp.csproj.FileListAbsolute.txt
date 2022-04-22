@@ -145,3 +145,4 @@ C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEn
 C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\Microsoft.Threading.Tasks.dll
 C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\System.Net.Http.Extensions.dll
 C:\Users\tawil\OneDrive\Documents\VS Code Workspaces\Flutter\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\System.Net.Http.Primitives.dll
+C:\Users\peter\Documents\GitHub\SmartCooking\BackEnd\API\FoodApp\bin\Debug\net5.0\Microsoft.Extensions.Configuration.Abstractions.dll

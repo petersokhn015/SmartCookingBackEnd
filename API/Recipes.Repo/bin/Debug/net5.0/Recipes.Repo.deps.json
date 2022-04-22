@@ -13,6 +13,7 @@
           "FireSharp": "2.0.4",
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.EntityFrameworkCore": "3.1.22",
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
           "Newtonsoft.Json": "13.0.1",
           "Recipes.Data": "1.0.0",
           "Recipes.Services": "1.0.0"
@@ -167,7 +168,7 @@
       },
       "Microsoft.Extensions.Configuration/3.1.22": {
         "dependencies": {
-          "Microsoft.Extensions.Configuration.Abstractions": "3.1.22"
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.dll": {
@@ -176,14 +177,14 @@
           }
         }
       },
-      "Microsoft.Extensions.Configuration.Abstractions/3.1.22": {
+      "Microsoft.Extensions.Configuration.Abstractions/6.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "6.0.0"
         },
         "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "assemblyVersion": "3.1.22.0",
-            "fileVersion": "3.100.2221.57103"
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
           }
         }
       },
@@ -1113,12 +1114,12 @@
       "path": "microsoft.extensions.configuration/3.1.22",
       "hashPath": "microsoft.extensions.configuration.3.1.22.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration.Abstractions/3.1.22": {
+    "Microsoft.Extensions.Configuration.Abstractions/6.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-znkB/7CpLNzFPFrZP0dK5dLwLt/GgrDBdBCaTQvVAPAJdA96DkhizknBC5+vn0Le8JNOoGt4QlG7WMywswkA0w==",
-      "path": "microsoft.extensions.configuration.abstractions/3.1.22",
-      "hashPath": "microsoft.extensions.configuration.abstractions.3.1.22.nupkg.sha512"
+      "sha512": "sha512-qWzV9o+ZRWq+pGm+1dF+R7qTgTYoXvbyowRoBxQJGfqTpqDun2eteerjRQhq5PQ/14S+lqto3Ft4gYaRyl4rdQ==",
+      "path": "microsoft.extensions.configuration.abstractions/6.0.0",
+      "hashPath": "microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.Binder/3.1.22": {
       "type": "package",
