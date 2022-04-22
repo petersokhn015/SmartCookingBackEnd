@@ -11,12 +11,9 @@ namespace Recipes.Services
     {
         Task<bool> AddUserPreferences(UserPreferences preferences);
 
-
         Task<UserPreferences> GetUserPreferences(int id);
 
-
         Task<Dictionary<string, UserPreferences>> GetAllPreferences();
-
 
         Task<bool> UpdatePreference(UserPreferences preference);
 

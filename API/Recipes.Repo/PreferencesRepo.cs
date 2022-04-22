@@ -80,10 +80,6 @@ namespace Recipes.Repo
 
                 var result = await _client.GetAsync("Preferences");
                 Dictionary<string, UserPreferences> data = result.ResultAs<Dictionary<string, UserPreferences>>();
-                if (data != null)
-                {
-                    count = data.Count;
-                }
                 return count;
             }
             catch

@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 namespace Recipes.Data
 {
-    public class RecipeProfile : Profile
+    public class RecipeToRecipeDTOProfile : Profile
     {
-        public RecipeProfile()
+        public RecipeToRecipeDTOProfile()
         {
             CreateMap<Recipe, RecipeDTO>().ReverseMap();
         }
