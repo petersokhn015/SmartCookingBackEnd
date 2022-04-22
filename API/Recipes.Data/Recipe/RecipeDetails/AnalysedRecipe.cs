@@ -35,7 +35,7 @@ namespace Recipes.Data
         public long Servings { get; set; }
 
         [JsonProperty("image")]
-        public Uri Image { get; set; }
+        public string Image { get; set; }
 
         [JsonProperty("nutrition")]
         public Nutrition Nutrition { get; set; }

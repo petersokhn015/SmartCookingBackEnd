@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace Recipes.Repo
 {
-    public class RecipeRepo : IRecipe
+    public class RecipesRepo : IRecipe
     {
         HttpClient _client;
         private readonly IConfiguration _configuration;
         readonly string baseURL, apiKey;
         private readonly IMapper _mapper;
 
-        public RecipeRepo(IConfiguration configuration, IMapper mapper)
+        public RecipesRepo(IConfiguration configuration, IMapper mapper)
         {
             _configuration = configuration;
             baseURL = _configuration.GetValue<string>("SpoonacularCredentials:BaseUrl");
