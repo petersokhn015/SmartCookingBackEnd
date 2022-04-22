@@ -32,7 +32,7 @@ namespace Recipes.Repo
                 var usercount = await GetCountUsers();
                 int Id = usercount + 1;
                 user.Id = Id;
-                if (await isUserExist(user.username))
+                if (await isUserExist(user.username) == false)
                 {
                     var setter = _client.Set("Users/User" + Id, user);
                 }
@@ -194,6 +194,12 @@ namespace Recipes.Repo
             {
                 var result = await _client.GetAsync("Users");
                 Dictionary<string, DTOUser> data = result.ResultAs<Dictionary<string, DTOUser>>();
+
+                if(data == null)
+                {
+                    return false;
+                }
+
                 foreach (var item in data)
                 {
                     if (item.Value.username.Equals(username))
