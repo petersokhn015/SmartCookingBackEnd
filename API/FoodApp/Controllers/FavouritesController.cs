@@ -19,9 +19,8 @@ namespace FoodApp.Controllers
         }
 
         [HttpPost("Favourite")]
-        public async Task<ActionResult> AddFavourite(int recipeId, int userId)
+        public async Task<ActionResult> AddFavourite([FromBody] DetailedRecipe recipe, int userId)
         {
-            DetailedRecipe recipe = await recipeInterface.GetRecipeInfo(recipeId);
             if (recipe == null)
             {
                 return BadRequest("Favourite Not Added");

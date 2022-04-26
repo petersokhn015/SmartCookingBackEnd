@@ -11,13 +11,13 @@ namespace Recipes.Data
         public Ingredient(string image, double amount, string name, string unit)
         {
             
-            Image = $"http://spoonacular.com/cdn/ingredients_100x100/{image}";
+            ImageUrl = $"http://spoonacular.com/cdn/ingredients_100x100/{image}";
             Amount = amount;
             Name = name;
             Unit = unit;
         }
 
-        public string Image { get; set; }
+        public string ImageUrl { get; set; }
 
         public double Amount { get; set; }
 

@@ -7,17 +7,6 @@ namespace Recipes.Data
 {
     public class AnalysedRecipe
     {
-        [JsonProperty("vegetarian")]
-        public bool Vegetarian { get; set; }
-
-        [JsonProperty("vegan")]
-        public bool Vegan { get; set; }
-
-        [JsonProperty("glutenFree")]
-        public bool GlutenFree { get; set; }
-
-        [JsonProperty("dairyFree")]
-        public bool DairyFree { get; set; }
 
         [JsonProperty("extendedIngredients")]
         public List<ExtendedIngredient> ExtendedIngredients { get; set; }
@@ -88,10 +77,6 @@ namespace Recipes.Data
         {
             List<string> tags = new();
 
-            if (Vegetarian) tags.Add("Vegetarian");
-            if (Vegan)      tags.Add("Vegan");
-            if (GlutenFree) tags.Add("Gluten Free");
-            if (DairyFree)  tags.Add("Dairy Free");
             if (Cuisines != null) Cuisines.ForEach(cuisine => tags.Add(cuisine));
             if (Diets != null) Diets.ForEach(diet => tags.Add(diet));
 

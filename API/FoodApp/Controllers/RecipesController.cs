@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Recipes.Data;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -17,24 +18,25 @@ namespace FoodApp
             this.recipeInterface = recipeInterface;
         }
 
-        [HttpGet("RecipeByIngredient")]
-        public async Task<List<RecipeDTO>> GetRecipeByIngredients([FromQuery] string[] ingredients)
+        [HttpPost("RecipeByIngredient")]
+        public async Task<List<RecipeDTO>> GetRecipeByIngredients([FromBody] string[] ingredients)
         {
+            Console.WriteLine(ingredients);
             List<RecipeDTO> recipes = await recipeInterface.GetRecipeByIngredients(ingredients);
             return recipes;
         }
 
-        [HttpGet("RecipeByFilter")]
-        public async Task<List<RecipeDTO>> GetRecipeByFilter([FromQuery] Filter filter)
+        [HttpPost("RecipeByFilter")]
+        public async Task<List<RecipeDTO>> GetRecipeByFilter([FromBody] Filter filter)
         {
             List<RecipeDTO> recipes = await recipeInterface.GetRecipesByFilter(filter);
             return recipes;
         }
 
         [HttpGet("RandomRecipes")]
-        public async Task<List<RecipeDTO>> GetRandomRecipe()
+        public async Task<List<RecipeDTO>> GetRandomRecipe([FromQuery]int recipeCount)
         {
-            List<RecipeDTO> recipes = await recipeInterface.GetRandomRecipes();
+            List<RecipeDTO> recipes = await recipeInterface.GetRandomRecipes(recipeCount);
             return recipes;
         }
 
@@ -46,7 +48,7 @@ namespace FoodApp
         }
 
         [HttpGet("RecipeDetails")]
-        public async Task<DetailedRecipe> GetRecipeInfo(int recipeId)
+        public async Task<DetailedRecipe> GetRecipeInfo([FromQuery] int recipeId)
         {
             DetailedRecipe recipe = await recipeInterface.GetRecipeInfo(recipeId);
             return recipe;
