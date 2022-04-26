@@ -92,3 +92,13 @@ API/Recipes.Repo/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs
 API/Recipes.Repo/obj/Debug/net5.0/Recipes.Repo.AssemblyInfo.cs
 API/Recipes.Services/obj/Debug/net5.0/.NETCoreApp,Version=v5.0.AssemblyAttributes.cs
 API/Recipes.Services/obj/Debug/net5.0/Recipes.Services.AssemblyInfo.cs
+*.json
+API/FoodApp/obj/FoodApp.csproj.nuget.dgspec.json
+API/FoodApp/obj/FoodApp.csproj.nuget.g.props
+*.json
+*.cache
+*.props
+*.props
+*.cache
+*.json
+API/Recipes.Data/obj/Recipes.Data.csproj.nuget.dgspec.json
