@@ -41,7 +41,7 @@ namespace Recipes.Data
         [JsonProperty("analyzedInstructions")]
         public List<Instruction> AnalyzedInstructions { get; set; }
 
-        public int CaloriesCount { get { return GetCalories(); } }
+        public int CaloriesAmount { get { return GetCalories(); } }
 
         public List<Ingredient> Ingredients { get { return ConvertIngredients(); } }
 
@@ -67,7 +67,7 @@ namespace Recipes.Data
         {
             List<Ingredient> ingredients = new();
             ExtendedIngredients.ForEach(e => ingredients.Add(new Ingredient(e.Image,
-                                                                            e.Measures.MesureDetails.Amount,
+                                                                            (double) e.Measures.MesureDetails.Amount,
                                                                             e.Name,
                                                                             e.Measures.MesureDetails.Unit)));
             return ingredients;
