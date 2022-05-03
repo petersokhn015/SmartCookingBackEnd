@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Recipes.Data;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -20,6 +21,7 @@ namespace FoodApp
         [HttpGet("RecipeByIngredient")]
         public async Task<ActionResult> GetRecipeByIngredients([FromQuery] string[] ingredients)
         {
+            Console.WriteLine(ingredients);
             List<RecipeDTO> recipes = await recipeInterface.GetRecipeByIngredients(ingredients);
             if (recipes != null)
             {
@@ -74,7 +76,7 @@ namespace FoodApp
         }
 
         [HttpGet("RecipeDetails")]
-        public async Task<ActionResult> GetRecipeInfo(int recipeId)
+        public async Task<ActionResult> GetRecipeInfo([FromQuery] int recipeId)
         {
             DetailedRecipe recipe = await recipeInterface.GetRecipeInfo(recipeId);
             if (recipe != null)
@@ -88,9 +90,9 @@ namespace FoodApp
         }
 
         [HttpGet("RecipeByTime")]
-        public async Task<ActionResult> GetRecipeByTime([FromQuery] string tag)
+        public async Task<ActionResult> GetRecipeByTime()
         {
-            List<RecipeDTO> recipes = await recipeInterface.GetRecipeByTime(tag);
+            List<RecipeDTO> recipes = await recipeInterface.GetRecipeByTime();
             if (recipes != null)
             {
                 return Ok(recipes);

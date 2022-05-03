@@ -7,17 +7,6 @@ namespace Recipes.Data
 {
     public class AnalysedRecipe
     {
-        [JsonProperty("vegetarian")]
-        public bool Vegetarian { get; set; }
-
-        [JsonProperty("vegan")]
-        public bool Vegan { get; set; }
-
-        [JsonProperty("glutenFree")]
-        public bool GlutenFree { get; set; }
-
-        [JsonProperty("dairyFree")]
-        public bool DairyFree { get; set; }
 
         [JsonProperty("extendedIngredients")]
         public List<ExtendedIngredient> ExtendedIngredients { get; set; }
@@ -35,7 +24,7 @@ namespace Recipes.Data
         public long Servings { get; set; }
 
         [JsonProperty("image")]
-        public Uri Image { get; set; }
+        public string Image { get; set; }
 
         [JsonProperty("nutrition")]
         public Nutrition Nutrition { get; set; }
@@ -52,7 +41,7 @@ namespace Recipes.Data
         [JsonProperty("analyzedInstructions")]
         public List<Instruction> AnalyzedInstructions { get; set; }
 
-        public int CaloriesCount { get { return GetCalories(); } }
+        public int CaloriesAmount { get { return GetCalories(); } }
 
         public List<Ingredient> Ingredients { get { return ConvertIngredients(); } }
 
@@ -78,7 +67,7 @@ namespace Recipes.Data
         {
             List<Ingredient> ingredients = new();
             ExtendedIngredients.ForEach(e => ingredients.Add(new Ingredient(e.Image,
-                                                                            e.Measures.MesureDetails.Amount,
+                                                                            (double) e.Measures.MesureDetails.Amount,
                                                                             e.Name,
                                                                             e.Measures.MesureDetails.Unit)));
             return ingredients;
@@ -88,10 +77,6 @@ namespace Recipes.Data
         {
             List<string> tags = new();
 
-            if (Vegetarian) tags.Add("Vegetarian");
-            if (Vegan)      tags.Add("Vegan");
-            if (GlutenFree) tags.Add("Gluten Free");
-            if (DairyFree)  tags.Add("Dairy Free");
             if (Cuisines != null) Cuisines.ForEach(cuisine => tags.Add(cuisine));
             if (Diets != null) Diets.ForEach(diet => tags.Add(diet));
 

@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace Recipes.Data
 {
-    public class DetailedRecipeProfile : Profile
+    public class AnalysedRecipeToDetailedRecipeProfile : Profile
     {
-        public DetailedRecipeProfile()
+        public AnalysedRecipeToDetailedRecipeProfile()
         {
             CreateMap<AnalysedRecipe, DetailedRecipe>().ReverseMap();
         }

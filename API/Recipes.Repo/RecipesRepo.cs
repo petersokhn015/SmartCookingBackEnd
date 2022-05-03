@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace Recipes.Repo
 {
-    public class RecipeRepo : IRecipe
+    public class RecipesRepo : IRecipe
     {
         HttpClient _client;
         private readonly IConfiguration _configuration;
         readonly string baseURL, apiKey;
         private readonly IMapper _mapper;
 
-        public RecipeRepo(IConfiguration configuration, IMapper mapper)
+        public RecipesRepo(IConfiguration configuration, IMapper mapper)
         {
             _configuration = configuration;
             baseURL = _configuration.GetValue<string>("SpoonacularCredentials:BaseUrl");
@@ -33,8 +33,8 @@ namespace Recipes.Repo
 
             try
             {
-                string ingredientsString = String.Join(",+", ingredients);
-                var response = await _client.GetAsync(new Uri($"{baseURL}findByIngredients?apiKey={apiKey}&ingredients={ingredients}"));
+                string ingredientsString = String.Join(",", ingredients);
+                var response = await _client.GetAsync(new Uri($"{baseURL}findByIngredients?apiKey={apiKey}&ingredients={ingredientsString}"));
 
                 if (response.IsSuccessStatusCode) results = await response.Content.ReadAsAsync<List<RecipeDTO>>();
 
@@ -73,10 +73,10 @@ namespace Recipes.Repo
             {
                 string apiUrl = $"{baseURL}complexSearch?apiKey={apiKey}&query={filter.Query.ToLower()}";
 
-                if (filter.CuisineTypes != null) { cuisineType = String.Join(",+", filter.CuisineTypes); apiUrl += $"&cuisine={cuisineType.ToLower()}"; }
-                if (filter.Intolerances != null) { intolerance = String.Join(",+", filter.Intolerances); apiUrl += $"&intolerances={intolerance.ToLower()}"; }
-                if (filter.Diet != null) { apiUrl += $"&diet={filter.Diet}"; }
-                if (filter.MealType != null) { apiUrl += $"&type={filter.MealType}"; }
+                if (filter.CuisineTypes != null || filter.CuisineTypes.Count != 0) { cuisineType = String.Join(",+", filter.CuisineTypes); apiUrl += $"&cuisine={cuisineType.ToLower()}"; }
+                if (filter.Intolerances != null || filter.Intolerances.Count != 0) { intolerance = String.Join(",+", filter.Intolerances); apiUrl += $"&intolerances={intolerance.ToLower()}"; }
+                if (filter.Diet != null || filter.Diet != "") { apiUrl += $"&diet={filter.Diet}"; }
+                if (filter.MealType != null || filter.MealType != "") { apiUrl += $"&type={filter.MealType}"; }
                 if (filter.MaxCookTime > 0) { apiUrl += $"&maxReadyTime={filter.MaxCookTime}"; }
 
                 var response = await _client.GetAsync(new Uri(apiUrl));
@@ -123,13 +123,24 @@ namespace Recipes.Repo
         public async Task<List<RecipeDTO>> GetRecommendedRecipe(int recipeId)
         {
             List<RecipeDTO> returnedResults = new();
+            Random random = new();
             try
             {
+                List<RecipeDTO> temp = new();
                 var response = await _client.GetAsync(new Uri($"{baseURL}{recipeId}/similar?apiKey={apiKey}"));
                 if (response.IsSuccessStatusCode)
                 {
                     List<Recipe> results = await response.Content.ReadAsAsync<List<Recipe>>();
-                    results.ForEach(recipe => returnedResults.Add(_mapper.Map<RecipeDTO>(recipe)));
+                    results.ForEach(recipe => temp.Add(_mapper.Map<RecipeDTO>(recipe)));
+                    if(temp.Count > 3)
+                    {
+                        for(int i = 0; i < 3; i++)
+                        {
+                            int j = random.Next(0, temp.Count);
+                            returnedResults.Add(temp[j]);
+                            temp.RemoveAt(j);
+                        }
+                    }
 
                 };
             }

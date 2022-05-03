@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zMvY0l4p8mGwKvv1qCA94CVeJ4jzN3QaQcIi01jVQERNuKTMEo1LktejRlJaUDIhix6U8KjbEYPs+s5KBFk+ww==",
+  "dgSpecHash": "QJH/QWiIo3UZ1S7npCK322J9nyW/qGBjwpjxeyxip3Muu07O++xnD6SSy98RNfmOYI4qN6CMlZLDyhk+5iUmkg==",
   "success": true,
   "projectFilePath": "C:\\Users\\tawil\\OneDrive\\Documents\\VS Code Workspaces\\Flutter\\SmartCooking\\BackEnd\\API\\FoodApp\\FoodApp.csproj",
   "expectedPackageFiles": [
@@ -21,7 +21,7 @@
     "C:\\Users\\tawil\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.22\\microsoft.extensions.caching.abstractions.3.1.22.nupkg.sha512",
     "C:\\Users\\tawil\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.22\\microsoft.extensions.caching.memory.3.1.22.nupkg.sha512",
     "C:\\Users\\tawil\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.22\\microsoft.extensions.configuration.3.1.22.nupkg.sha512",
-    "C:\\Users\\tawil\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.22\\microsoft.extensions.configuration.abstractions.3.1.22.nupkg.sha512",
+    "C:\\Users\\tawil\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\tawil\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.22\\microsoft.extensions.configuration.binder.3.1.22.nupkg.sha512",
     "C:\\Users\\tawil\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.22\\microsoft.extensions.dependencyinjection.3.1.22.nupkg.sha512",
     "C:\\Users\\tawil\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",

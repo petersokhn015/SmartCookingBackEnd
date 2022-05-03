@@ -7,6 +7,7 @@ using Microsoft.OpenApi.Models;
 using Recipes.Data;
 using Recipes.Repo;
 using Recipes.Services;
+using System.Collections.Generic;
 
 namespace FoodApp
 {
@@ -22,12 +23,14 @@ namespace FoodApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(RecipeProfile));
-            services.AddAutoMapper(typeof(DetailedRecipeProfile));
+            services.AddAutoMapper(typeof(RecipeToRecipeDTOProfile));
+            services.AddAutoMapper(typeof(AnalysedRecipeToDetailedRecipeProfile));
+            services.AddAutoMapper(typeof(List<RecipeDTO>));
             services.AddControllersWithViews();
-            services.AddTransient<IRecipe, RecipeRepo>();
+            services.AddTransient<IRecipe, RecipesRepo>();
             services.AddTransient<IPreferences, PreferencesRepo>();
             services.AddTransient<IUsers, UsersRepo>();
+            services.AddTransient<IFavourite, FavouritesRepo>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

@@ -13,7 +13,7 @@ namespace Recipes.Data
 
         public int CookTime { get; set; }
 
-        public int CaloriesCount { get; set; }
+        public int CaloriesAmount { get; set; }
 
         public int Servings { get; set; }
 

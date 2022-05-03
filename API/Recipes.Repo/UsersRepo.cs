@@ -3,10 +3,7 @@ using FireSharp.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Recipes.Data;
 using Recipes.Services;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Recipes.Repo
@@ -35,7 +32,11 @@ namespace Recipes.Repo
                 var usercount = await GetCountUsers();
                 int Id = usercount + 1;
                 user.Id = Id;
-                var setter = _client.Set("Users/User" + Id, user);
+                if (await isUserExist(user.username) == false)
+                {
+                    var setter = _client.Set("Users/User" + Id, user);
+                }
+
                 return true;
             }
             catch
@@ -96,7 +97,7 @@ namespace Recipes.Repo
         {
             try
             {
-                var result = _client.Get("Users/User" + id);
+                var result = await _client.GetAsync("Users/User" + id);
                 User user = result.ResultAs<User>();
                 return user;
             }
@@ -143,7 +144,7 @@ namespace Recipes.Repo
         {
             try
             {
-                var setter = _client.Update("Users/User" + user.Id, user);
+                var setter = await _client.UpdateAsync("Users/User" + user.Id, user);
                 return true;
             }
             catch
@@ -155,7 +156,7 @@ namespace Recipes.Repo
         {
             try
             {
-                var setter = _client.Delete("Users/User" + id);
+                var setter = await _client.DeleteAsync("Users/User" + id);
                 return true;
             }
             catch
@@ -193,6 +194,12 @@ namespace Recipes.Repo
             {
                 var result = await _client.GetAsync("Users");
                 Dictionary<string, DTOUser> data = result.ResultAs<Dictionary<string, DTOUser>>();
+
+                if(data == null)
+                {
+                    return false;
+                }
+
                 foreach (var item in data)
                 {
                     if (item.Value.username.Equals(username))
