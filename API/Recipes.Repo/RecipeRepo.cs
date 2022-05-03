@@ -89,7 +89,38 @@ namespace Recipes.Repo
             return results.Results;
         }
 
-        public async Task<List<RecipeDTO>> GetRecommendedRecipes(int recipeId)
+
+        public async Task<List<RecipeDTO>> GetRecommendedRecipes(int[] recipeIds)
+        {
+            Random random = new Random();
+            List<RecipeDTO> returnedRecipes = new();
+            List<RecipeDTO> allRecipes = new();
+
+            try
+            {
+                for (int i = 0; i < recipeIds.Length; i++)
+                {
+                    List<RecipeDTO> temp = new();
+                    temp = await GetRecommendedRecipe(recipeIds[i]);
+                    temp.ForEach((recipe) => allRecipes.Add(recipe));
+                }
+
+                for (int i = 0; i < 3; i++)
+                {
+                    int j = random.Next(allRecipes.Count + 1);
+                    returnedRecipes.Add(allRecipes[j]);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
+            return returnedRecipes;
+
+        }
+
+        public async Task<List<RecipeDTO>> GetRecommendedRecipe(int recipeId)
         {
             List<RecipeDTO> returnedResults = new();
             try
@@ -117,6 +148,22 @@ namespace Recipes.Repo
                 var response = await _client.GetAsync(new Uri($"{baseURL}random?apiKey={apiKey}&number=3"));
                 if (response.IsSuccessStatusCode) results = await response.Content.ReadAsAsync<RandomRecipe>();
                 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            return results.Recipes;
+        }
+
+        public async Task<List<RecipeDTO>> GetRecipeByTime(string tag)
+        {
+            RandomRecipe results = new();
+            try
+            {
+                var response = await _client.GetAsync(new Uri($"{baseURL}random?apiKey={apiKey}&tags={tag}&number=5"));
+                if (response.IsSuccessStatusCode) results = await response.Content.ReadAsAsync<RandomRecipe>();
+
             }
             catch (Exception e)
             {

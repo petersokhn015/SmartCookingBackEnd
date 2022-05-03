@@ -6,11 +6,15 @@ using System.Threading.Tasks;
     {
         Task<List<RecipeDTO>> GetRecipeByIngredients(string[] ingredients);
 
-        Task<List<RecipeDTO>> GetRecommendedRecipes(int recipeId);
+        Task<List<RecipeDTO>> GetRecommendedRecipe(int recipeId);
+
+        Task<List<RecipeDTO>> GetRecommendedRecipes(int[] recipeIds);
 
         Task<DetailedRecipe> GetRecipeInfo(int recipeId);
 
         Task<List<RecipeDTO>> GetRecipesByFilter(Filter filter);
 
         Task<List<RecipeDTO>> GetRandomRecipes();
+
+        Task<List<RecipeDTO>> GetRecipeByTime(string tag);
     }
