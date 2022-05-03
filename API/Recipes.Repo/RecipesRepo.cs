@@ -108,7 +108,7 @@ namespace Recipes.Repo
                 for (int i = 0; i < 3; i++)
                 {
                     int j = random.Next(allRecipes.Count + 1);
-                    returnedRecipes.Add(allRecipes[j]);
+                    returnedRecipes.Add(await GetRecipeById(allRecipes[j].Id));
                     allRecipes.RemoveAt(j);
                 }
             }
@@ -172,6 +172,22 @@ namespace Recipes.Repo
                 Console.WriteLine(e.ToString());
             }
             return results.Recipes;
+        }
+
+        public async Task<RecipeDTO> GetRecipeById(long id)
+        {
+            RecipeDTO result = new();
+            try
+            {
+                var response = await _client.GetAsync(new Uri($"{baseURL}/{id}/information?apiKey={apiKey}"));
+                if (response.IsSuccessStatusCode) result = await response.Content.ReadAsAsync<RecipeDTO>();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            return result;
         }
     }
 }

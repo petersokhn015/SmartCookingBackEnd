@@ -17,4 +17,6 @@ using System.Threading.Tasks;
         Task<List<RecipeDTO>> GetRandomRecipes();
 
         Task<List<RecipeDTO>> GetRecipeByTime(string tag);
+        
+        Task<RecipeDTO> GetRecipeById(long id);
     }
