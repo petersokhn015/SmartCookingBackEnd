@@ -19,39 +19,88 @@ namespace FoodApp
         }
 
         [HttpPost("RecipeByIngredient")]
-        public async Task<List<RecipeDTO>> GetRecipeByIngredients([FromBody] string[] ingredients)
+        public async Task<ActionResult> GetRecipeByIngredients([FromBody] string[] ingredients)
         {
             Console.WriteLine(ingredients);
             List<RecipeDTO> recipes = await recipeInterface.GetRecipeByIngredients(ingredients);
-            return recipes;
+            if(recipes != null)
+            {
+                return Ok(recipes);
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
         [HttpPost("RecipeByFilter")]
-        public async Task<List<RecipeDTO>> GetRecipeByFilter([FromBody] Filter filter)
+        public async Task<ActionResult> GetRecipeByFilter([FromBody] Filter filter)
         {
             List<RecipeDTO> recipes = await recipeInterface.GetRecipesByFilter(filter);
-            return recipes;
+            if (recipes != null)
+            {
+                return Ok(recipes);
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
         [HttpGet("RandomRecipes")]
-        public async Task<List<RecipeDTO>> GetRandomRecipe([FromQuery]int recipeCount)
+        public async Task<ActionResult> GetRandomRecipe()
         {
-            List<RecipeDTO> recipes = await recipeInterface.GetRandomRecipes(recipeCount);
-            return recipes;
+            List<RecipeDTO> recipes = await recipeInterface.GetRandomRecipes();
+            if (recipes != null)
+            {
+                return Ok(recipes);
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
         [HttpGet("RecommendedRecipe")]
-        public async Task<List<RecipeDTO>> GetRecommendedRecipe([FromQuery] int id)
+        public async Task<ActionResult> GetRecommendedRecipe([FromQuery] int id)
         {
             List<RecipeDTO> recipes = await recipeInterface.GetRecommendedRecipes(id);
-            return recipes;
+            if (recipes != null)
+            {
+                return Ok(recipes);
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
         [HttpGet("RecipeDetails")]
-        public async Task<DetailedRecipe> GetRecipeInfo([FromQuery] int recipeId)
+        public async Task<ActionResult> GetRecipeInfo([FromQuery] int recipeId)
         {
             DetailedRecipe recipe = await recipeInterface.GetRecipeInfo(recipeId);
-            return recipe;
+            if (recipe != null)
+            {
+                return Ok(recipe);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpGet("RecipeByTime")]
+        public async Task<ActionResult> GetRecipeByTime()
+        {
+            List<RecipeDTO> recipes = await recipeInterface.GetRecipeByTime();
+            if (recipes != null)
+            {
+                return Ok(recipes);
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
     }
 }
