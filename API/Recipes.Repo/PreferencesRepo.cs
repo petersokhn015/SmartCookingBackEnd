@@ -27,14 +27,26 @@ namespace Recipes.Repo
             _client = new FireSharp.FirebaseClient(_config);
         }
 
-        public async Task<bool> AddUserPreferences(UserPreferences preferences)
+        public async Task<bool> AddUserPreferences(UserPreferences Preferences)
         {
             try
             {
                 var prefcount = await GetCountPreferences();
+                var allPrefs = await GetAllPreferences();
                 int Id = prefcount + 1;
-                preferences.Id = Id;
-                var setter = _client.Set("Preferences/UserPreference" + Id, preferences);
+
+                foreach (var pref in allPrefs.Values)
+                {
+                    if(pref.userId == Preferences.userId)
+                    {
+                        Preferences.Id = pref.Id;
+                        Id = Preferences.Id;
+                    }
+                }
+
+                
+                Preferences.Id = Id;
+                var setter = _client.Set("Preferences/UserPreference" + Id, Preferences);
                 return true;
             }
             catch
@@ -80,11 +92,15 @@ namespace Recipes.Repo
 
                 var result = await _client.GetAsync("Preferences");
                 Dictionary<string, UserPreferences> data = result.ResultAs<Dictionary<string, UserPreferences>>();
+                if (data != null)
+                {
+                    count = data.Count;
+                }
                 return count;
             }
             catch
             {
-                return count;
+                return -1;
             }
         }
 
