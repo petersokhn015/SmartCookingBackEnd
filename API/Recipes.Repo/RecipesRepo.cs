@@ -109,6 +109,7 @@ namespace Recipes.Repo
                 {
                     int j = random.Next(allRecipes.Count + 1);
                     returnedRecipes.Add(allRecipes[j]);
+                    allRecipes.RemoveAt(j);
                 }
             }
             catch (Exception e)
@@ -126,21 +127,11 @@ namespace Recipes.Repo
             Random random = new();
             try
             {
-                List<RecipeDTO> temp = new();
                 var response = await _client.GetAsync(new Uri($"{baseURL}{recipeId}/similar?apiKey={apiKey}"));
                 if (response.IsSuccessStatusCode)
                 {
                     List<Recipe> results = await response.Content.ReadAsAsync<List<Recipe>>();
-                    results.ForEach(recipe => temp.Add(_mapper.Map<RecipeDTO>(recipe)));
-                    if(temp.Count > 3)
-                    {
-                        for(int i = 0; i < 3; i++)
-                        {
-                            int j = random.Next(0, temp.Count);
-                            returnedResults.Add(temp[j]);
-                            temp.RemoveAt(j);
-                        }
-                    }
+                    results.ForEach(recipe => returnedResults.Add(_mapper.Map<RecipeDTO>(recipe)));
 
                 };
             }

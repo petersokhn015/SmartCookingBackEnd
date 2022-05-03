@@ -90,9 +90,9 @@ namespace FoodApp
         }
 
         [HttpGet("RecipeByTime")]
-        public async Task<ActionResult> GetRecipeByTime()
+        public async Task<ActionResult> GetRecipeByTime([FromQuery] string tag)
         {
-            List<RecipeDTO> recipes = await recipeInterface.GetRecipeByTime();
+            List<RecipeDTO> recipes = await recipeInterface.GetRecipeByTime(tag);
             if (recipes != null)
             {
                 return Ok(recipes);
