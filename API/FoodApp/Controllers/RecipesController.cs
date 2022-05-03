@@ -18,12 +18,12 @@ namespace FoodApp
             this.recipeInterface = recipeInterface;
         }
 
-        [HttpPost("RecipeByIngredient")]
-        public async Task<ActionResult> GetRecipeByIngredients([FromBody] string[] ingredients)
+        [HttpGet("RecipeByIngredient")]
+        public async Task<ActionResult> GetRecipeByIngredients([FromQuery] string[] ingredients)
         {
             Console.WriteLine(ingredients);
             List<RecipeDTO> recipes = await recipeInterface.GetRecipeByIngredients(ingredients);
-            if(recipes != null)
+            if (recipes != null)
             {
                 return Ok(recipes);
             }
@@ -33,8 +33,8 @@ namespace FoodApp
             }
         }
 
-        [HttpPost("RecipeByFilter")]
-        public async Task<ActionResult> GetRecipeByFilter([FromBody] Filter filter)
+        [HttpGet("RecipeByFilter")]
+        public async Task<ActionResult> GetRecipeByFilter([FromQuery] Filter filter)
         {
             List<RecipeDTO> recipes = await recipeInterface.GetRecipesByFilter(filter);
             if (recipes != null)
@@ -61,10 +61,10 @@ namespace FoodApp
             }
         }
 
-        [HttpGet("RecommendedRecipe")]
-        public async Task<ActionResult> GetRecommendedRecipe([FromQuery] int id)
+        [HttpPost("RecommendedRecipe")]
+        public async Task<ActionResult> GetRecommendedRecipes([FromBody] int[] ids)
         {
-            List<RecipeDTO> recipes = await recipeInterface.GetRecommendedRecipes(id);
+            List<RecipeDTO> recipes = await recipeInterface.GetRecommendedRecipes(ids);
             if (recipes != null)
             {
                 return Ok(recipes);
