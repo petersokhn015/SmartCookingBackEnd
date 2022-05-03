@@ -12,5 +12,7 @@ using System.Threading.Tasks;
 
         Task<List<RecipeDTO>> GetRecipesByFilter(Filter filter);
 
-        Task<List<RecipeDTO>> GetRandomRecipes(int recipeCount);
+        Task<List<RecipeDTO>> GetRandomRecipes();
+
+        Task<List<RecipeDTO>> GetRecipeByTime();
     }

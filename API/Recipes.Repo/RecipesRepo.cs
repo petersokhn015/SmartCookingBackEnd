@@ -109,14 +109,39 @@ namespace Recipes.Repo
             return returnedResults;
         }
 
-        public async Task<List<RecipeDTO>> GetRandomRecipes(int recipeCount)
+        public async Task<List<RecipeDTO>> GetRandomRecipes()
         {
             RandomRecipe results = new();
             try
             {
-                var response = await _client.GetAsync(new Uri($"{baseURL}random?apiKey={apiKey}&number={recipeCount}"));
+                var response = await _client.GetAsync(new Uri($"{baseURL}random?apiKey={apiKey}&number=3"));
                 if (response.IsSuccessStatusCode) results = await response.Content.ReadAsAsync<RandomRecipe>();
                 
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            return results.Recipes;
+        }
+
+        public async Task<List<RecipeDTO>> GetRecipeByTime()
+        {
+            RandomRecipe results = new();
+            string tag = "";
+
+            int time = int.Parse(DateTime.Now.ToString("HH"));
+
+            if (time >= 4 && time < 11) { tag = "breakfast"; }
+            else if (time >= 11 && time < 15) { tag = "main course"; }
+            else if (time >=15 && time < 19) { tag = "dessert"; }
+            else if (time >= 20 && time < 4) { tag = "dinner"; }
+
+            try
+            {
+                var response = await _client.GetAsync(new Uri($"{baseURL}random?apiKey={apiKey}&tags={tag}&number=5"));
+                if (response.IsSuccessStatusCode) results = await response.Content.ReadAsAsync<RandomRecipe>();
+
             }
             catch (Exception e)
             {
