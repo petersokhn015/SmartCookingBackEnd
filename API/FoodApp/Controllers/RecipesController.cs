@@ -19,7 +19,7 @@ namespace FoodApp
         }
 
         [HttpGet("RecipeByIngredient")]
-        public async Task<ActionResult> GetRecipeByIngredients([FromQuery] string[] ingredients)
+        public async Task<ActionResult> GetRecipeByIngredients([FromBody] string[] ingredients)
         {
             Console.WriteLine(ingredients);
             List<RecipeDTO> recipes = await recipeInterface.GetRecipeByIngredients(ingredients);
