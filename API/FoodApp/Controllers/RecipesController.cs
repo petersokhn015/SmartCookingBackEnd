@@ -18,10 +18,10 @@ namespace FoodApp
             this.recipeInterface = recipeInterface;
         }
 
-        [HttpGet("RecipeByIngredient")]
+        [HttpPost("RecipeByIngredient")]
         public async Task<ActionResult> GetRecipeByIngredients([FromBody] string[] ingredients)
         {
-            Console.WriteLine(ingredients);
+
             List<RecipeDTO> recipes = await recipeInterface.GetRecipeByIngredients(ingredients);
             if (recipes != null)
             {
